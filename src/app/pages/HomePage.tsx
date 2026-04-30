@@ -5,6 +5,7 @@ import { SustainabilitySection } from "../components/home/SustainabilitySection"
 import { DepreciationStrategies } from "../components/home/DepreciationStrategies";
 import { GlobalRepresentation } from "../components/home/GlobalRepresentation";
 import { LatestInsights } from "../components/home/LatestInsights";
+import { PartnersSection } from "../components/PartnersSection";
 import { Footer } from "../components/Footer";
 
 export function HomePage() {
@@ -17,6 +18,7 @@ export function HomePage() {
       <DepreciationStrategies />
       <GlobalRepresentation />
       <LatestInsights />
+      <PartnersSection />
       <Footer />
     </>
   );
