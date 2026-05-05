@@ -76,8 +76,6 @@ export function ApprenticeshipsPage() {
       {/* Hero Section */}
       <section className="relative py-32 px-6 bg-gradient-to-br from-[#009C43] to-[#007A34] overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -96,7 +94,7 @@ export function ApprenticeshipsPage() {
               <button className="px-8 py-4 bg-white text-[#009C43] font-semibold text-lg hover:bg-gray-100 transition-colors" style={{ borderRadius: "16px" }}>
                 Apply for 2026
               </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white text-white font-semibold text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
+              <button className="px-8 py-4 bg-white/10 border-2 border-white text-white font-semibold text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
                 Download Brochure
               </button>
             </div>
@@ -324,7 +322,7 @@ export function ApprenticeshipsPage() {
               We are waiting for you. Take the first step toward a career at Revive Group today.
             </p>
 
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-12 max-w-2xl mx-auto" style={{ borderRadius: "24px" }}>
+            <div className="bg-white/10 border border-white/20 p-8 md:p-12 max-w-2xl mx-auto" style={{ borderRadius: "24px" }}>
               <form className="space-y-6">
                 <div className="text-left">
                   <label className="block text-white font-semibold mb-2">Full Name *</label>

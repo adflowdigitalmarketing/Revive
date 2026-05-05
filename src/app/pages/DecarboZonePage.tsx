@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { MapPin, Users, Target, Zap, GraduationCap, TrendingUp, Leaf, Award } from "lucide-react";
+import { MapPin, Users, Target, Zap, GraduationCap, TrendingUp, Leaf, Award, Recycle, Sprout, Truck } from "lucide-react";
 import { Footer } from "../components/Footer";
 import decZoneImage from "figma:asset/dec-zone.jpg";
 import decZoneMap from "figma:asset/dec-zone-map.png";
@@ -32,7 +32,7 @@ export function DecarboZonePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={decZoneImage}
+            src={decZoneMap}
             alt="Mid-Tipperary Decarbonising Zone"
             className="w-full h-full object-cover"
           />
@@ -48,20 +48,20 @@ export function DecarboZonePage() {
             <div className="inline-block px-4 py-2 bg-[#009C43]/20 backdrop-blur-md text-[#009C43] mb-8 rounded-[12px] text-sm font-medium tracking-widest uppercase border border-[#009C43]/30">
               Leading the Transition
             </div>
-            <h1 className="text-5xl md:text-7xl font-medium text-white mb-8" style={{ letterSpacing: "-0.03em" }}>
+            <h1 className="text-white mb-8" style={{ fontSize: "48px", fontWeight: 600, letterSpacing: "-0.04em", lineHeight: 0.95 }}>
               Mid-Tipperary Decarbonising Zone
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-white/90 max-w-4xl mx-auto mb-8" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 400, lineHeight: 1.6 }}>
               The Centre of Change
             </p>
-            <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
               We don't just build equipment — we transform the region. Revive Group is at the core of the decarbonisation initiative, turning Tipperary into a global hub of eco-engineering.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-[#009C43] text-white font-medium text-lg hover:bg-[#007A34] transition-colors" style={{ borderRadius: "16px" }}>
                 Our Community Impact
               </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
+              <button className="px-8 py-4 bg-white/10 border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
                 Strategy 2030
               </button>
             </div>
@@ -275,7 +275,7 @@ export function DecarboZonePage() {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-[#009C43]/10 rounded-[12px] flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">♻️</span>
+                    <Recycle className="text-[#009C43]" size={24} />
                   </div>
                   <div>
                     <div className="font-medium text-gray-900">Regeneration Hub</div>
@@ -284,7 +284,7 @@ export function DecarboZonePage() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-[#009C43]/10 rounded-[12px] flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🌱</span>
+                    <Sprout className="text-[#009C43]" size={28} />
                   </div>
                   <div>
                     <div className="font-medium text-gray-900">Clean Manufacturing</div>
@@ -293,7 +293,7 @@ export function DecarboZonePage() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-[#009C43]/10 rounded-[12px] flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🚛</span>
+                    <Truck className="text-[#009C43]" size={24} />
                   </div>
                   <div>
                     <div className="font-medium text-gray-900">Extended Lifecycles</div>

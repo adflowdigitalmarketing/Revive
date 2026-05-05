@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { RefreshCw, TrendingUp, DollarSign, Leaf, ArrowRight } from "lucide-react";
+import { RefreshCw, TrendingUp, DollarSign, Leaf, ArrowRight, Factory, Truck, Trash2, Search, Recycle, Sparkles, Wrench, Droplet } from "lucide-react";
 import {
   LineChart,
   Line,
@@ -42,10 +42,10 @@ export function CircularEconomyPage() {
             <div className="inline-block px-4 py-2 bg-[#009C43]/10 text-[#009C43] mb-8 rounded-[12px] text-sm font-medium tracking-widest uppercase border border-[#009C43]/20">
               The Loop of Innovation
             </div>
-            <h1 className="text-5xl md:text-7xl font-medium text-gray-900 mb-8" style={{ letterSpacing: "-0.03em" }}>
+            <h1 className="text-gray-900 mb-8" style={{ fontSize: "48px", fontWeight: 600, letterSpacing: "-0.04em", lineHeight: 0.95 }}>
               Circular Economy: Rethinking the Lifecycle
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-gray-600 max-w-4xl mx-auto mb-12" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 400, lineHeight: 1.6 }}>
               We stop the linear "make-use-dispose" model. At Revive Group we give assets a second life, preserving the planet's resources and your investments.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -91,26 +91,29 @@ export function CircularEconomyPage() {
               <h3 className="text-2xl font-medium text-gray-900 mb-8">Traditional Model</h3>
               <div className="space-y-6">
                 {[
-                  { step: "1", label: "Metal Extraction", icon: "⛏️" },
-                  { step: "2", label: "Manufacturing", icon: "🏭" },
-                  { step: "3", label: "Operation", icon: "🚛" },
-                  { step: "4", label: "Scrap", icon: "🗑️" }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gray-400 rounded-[12px] flex items-center justify-center text-white font-medium flex-shrink-0">
-                      {item.step}
-                    </div>
-                    <div className="flex-1 bg-white/60 p-4 rounded-[12px] border border-gray-300">
-                      <div className="flex items-center gap-3">
-                        <span className="text-2xl">{item.icon}</span>
-                        <span className="text-gray-700 font-medium">{item.label}</span>
+                  { step: "1", label: "Metal Extraction", icon: Factory },
+                  { step: "2", label: "Manufacturing", icon: Factory },
+                  { step: "3", label: "Operation", icon: Truck },
+                  { step: "4", label: "Scrap", icon: Trash2 }
+                ].map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={index} className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-gray-400 rounded-[12px] flex items-center justify-center text-white font-medium flex-shrink-0">
+                        {item.step}
                       </div>
+                      <div className="flex-1 bg-white/60 p-4 rounded-[12px] border border-gray-300">
+                        <div className="flex items-center gap-3">
+                          <Icon className="text-gray-700" size={28} />
+                          <span className="text-gray-700 font-medium">{item.label}</span>
+                        </div>
+                      </div>
+                      {index < 3 && (
+                        <div className="w-8 text-center text-gray-400 text-2xl">↓</div>
+                      )}
                     </div>
-                    {index < 3 && (
-                      <div className="w-8 text-center text-gray-400 text-2xl">↓</div>
-                    )}
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </motion.div>
 
@@ -129,26 +132,29 @@ export function CircularEconomyPage() {
                 <h3 className="text-2xl font-medium text-white mb-8">Revive Model</h3>
                 <div className="space-y-6">
                   {[
-                    { step: "1", label: "Operation", icon: "🚛" },
-                    { step: "2", label: "Diagnostics", icon: "🔍" },
-                    { step: "3", label: "Regeneration", icon: "♻️" },
-                    { step: "4", label: "Second Life (30+ years)", icon: "✨" }
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-white rounded-[12px] flex items-center justify-center text-[#009C43] font-medium flex-shrink-0">
-                        {item.step}
-                      </div>
-                      <div className="flex-1 bg-white/10 backdrop-blur-md p-4 rounded-[12px] border border-white/20">
-                        <div className="flex items-center gap-3">
-                          <span className="text-2xl">{item.icon}</span>
-                          <span className="text-white font-medium">{item.label}</span>
+                    { step: "1", label: "Operation", icon: Truck },
+                    { step: "2", label: "Diagnostics", icon: Search },
+                    { step: "3", label: "Regeneration", icon: Recycle },
+                    { step: "4", label: "Second Life (30+ years)", icon: Sparkles }
+                  ].map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <div key={index} className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-white rounded-[12px] flex items-center justify-center text-[#009C43] font-medium flex-shrink-0">
+                          {item.step}
                         </div>
+                        <div className="flex-1 bg-white/10 backdrop-blur-md p-4 rounded-[12px] border border-white/20">
+                          <div className="flex items-center gap-3">
+                            <Icon className="text-white" size={28} />
+                            <span className="text-white font-medium">{item.label}</span>
+                          </div>
+                        </div>
+                        {index < 3 && (
+                          <div className="w-8 text-center text-white text-2xl">↓</div>
+                        )}
                       </div>
-                      {index < 3 && (
-                        <div className="w-8 text-center text-white text-2xl">↓</div>
-                      )}
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
                 <div className="mt-6 p-6 bg-white/10 backdrop-blur-md rounded-[16px] border border-white/20">
                   <p className="text-white/90 text-sm leading-relaxed">
@@ -184,42 +190,43 @@ export function CircularEconomyPage() {
               {
                 title: "Refurbish",
                 description: "Complete refurbishment of mechanical assemblies to like-new condition",
-                icon: "🔧",
+                icon: Wrench,
                 color: "from-blue-500 to-indigo-600"
               },
               {
                 title: "Repurpose",
                 description: "Installing modern vacuum systems on time-tested chassis",
-                icon: "🔄",
+                icon: RefreshCw,
                 color: "from-purple-500 to-pink-600"
               },
               {
                 title: "Recycle",
                 description: "Our Compact Recycling Piston allows water to be reused during operation",
-                icon: "💧",
+                icon: Droplet,
                 color: "from-cyan-500 to-blue-600"
               }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                viewport={{ once: true }}
-                className="group relative overflow-hidden"
-                style={{ borderRadius: "24px" }}
-              >
-                <div className={`bg-gradient-to-br ${item.color} p-10 h-full`}>
-                  <div className="absolute bottom-0 right-0 -mr-10 -mb-10 w-40 h-40 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
-
-                  <div className="relative z-10">
-                    <div className="text-6xl mb-6">{item.icon}</div>
-                    <h3 className="text-3xl font-medium text-white mb-4">{item.title}</h3>
-                    <p className="text-white/90 leading-relaxed">{item.description}</p>
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  viewport={{ once: true }}
+                  className="group relative overflow-hidden"
+                  style={{ borderRadius: "24px" }}
+                >
+                  <div className={`bg-gradient-to-br ${item.color} p-10 h-full`}>
+                    <div className="relative z-10">
+                      <Icon className="text-white mb-6" size={48} />
+                      <h3 className="text-3xl font-medium text-white mb-4">{item.title}</h3>
+                      <p className="text-white/90 leading-relaxed">{item.description}</p>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

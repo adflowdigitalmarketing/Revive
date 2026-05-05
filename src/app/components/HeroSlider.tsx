@@ -9,7 +9,7 @@ import warrior from "../../imports/hiro-warrior1.jpeg";
 import program from "../../imports/hiro-revive-program.png";
 import dublin from "../../imports/dublin_street1.png";
 import sustainability from "../../imports/IMG_6479.JPG";
-import data from "../../imports/co2.png";
+import data from "../../imports/data-screen.png";
 
 interface Slide {
   image: string;
@@ -103,14 +103,6 @@ export function HeroSlider() {
             transition={{ duration: 8, ease: "linear" }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
-
-          {/* Grain Texture */}
-          <div
-            className="absolute inset-0 opacity-20 mix-blend-overlay"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-            }}
-          />
         </motion.div>
       </AnimatePresence>
 

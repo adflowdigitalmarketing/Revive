@@ -1,6 +1,12 @@
 import { motion } from "motion/react";
-import { Linkedin, Facebook, Youtube, Mail } from "lucide-react";
+import {
+  Linkedin,
+  Facebook,
+  Youtube,
+  Mail,
+} from "lucide-react";
 import { Link } from "react-router";
+import logo from "../../imports/Revive_Group_gray_logo.png";
 
 export function Footer() {
   return (
@@ -10,25 +16,38 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Left Column - Company Info */}
           <div>
-            <div className="mb-6" style={{ fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.02em' }}>
-              REVIVE<span className="text-[#009C43]">.</span>
+            <div className="mb-6">
+              <img
+                src={logo}
+                alt="Revive Group"
+                className="h-8 w-auto"
+              />
             </div>
 
             <div className="space-y-3 text-sm text-gray-600 mb-6">
               <div>
-                <a href="tel:+353504022422" className="hover:text-[#009C43] transition-colors">
+                <a
+                  href="tel:+353504022422"
+                  className="hover:text-[#009C43] transition-colors"
+                >
                   +353 (0)504 22422
                 </a>
               </div>
               <div className="leading-relaxed">
-                Building 1, Revive Eco Park<br />
-                Cooleeney, Moyne, Thurles<br />
-                Tipperary, E41 X3P9<br />
+                Building 1, Revive Eco Park
+                <br />
+                Cooleeney, Moyne, Thurles
+                <br />
+                Tipperary, E41 X3P9
+                <br />
                 Ireland
               </div>
               <div>
-                <a href="mailto:info@revivegroup.com" className="hover:text-[#009C43] transition-colors">
-                  info@revivegroup.com
+                <a
+                  href="mailto:info@rei-limited.com"
+                  className="hover:text-[#009C43] transition-colors"
+                >
+                  info@rei-limited.com
                 </a>
               </div>
             </div>
@@ -43,11 +62,11 @@ export function Footer() {
                   type="email"
                   placeholder="Your email"
                   className="flex-1 px-3 py-2 text-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#009C43]/20 focus:border-[#009C43]"
-                  style={{ borderRadius: '8px' }}
+                  style={{ borderRadius: "8px" }}
                 />
                 <button
                   className="px-4 py-2 bg-[#009C43] text-white text-sm font-medium hover:bg-[#007A34] transition-colors"
-                  style={{ borderRadius: '8px' }}
+                  style={{ borderRadius: "8px" }}
                 >
                   <Mail size={16} />
                 </button>
@@ -62,22 +81,34 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link to="/sustainability" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/sustainability"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   Sustainability
                 </Link>
               </li>
               <li>
-                <Link to="/sustainability/ecopark" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/sustainability/ecopark"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   Revive EcoPark
                 </Link>
               </li>
               <li>
-                <Link to="/sustainability/circular-economy" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/sustainability/circular-economy"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   The Circular Economy
                 </Link>
               </li>
               <li>
-                <Link to="/sustainability/green-credentials" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/sustainability/green-credentials"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   Green Credentials
                 </Link>
               </li>
@@ -91,22 +122,34 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link to="/solutions/program" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/solutions/program"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   Revive Program
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/warrior" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/solutions/warrior"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   Warrior Units
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/machinery" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/solutions/machinery"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   Specialized Industrial Machinery
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/service" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/solutions/service"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   Service & Parts
                 </Link>
               </li>
@@ -120,22 +163,34 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link to="/news" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/news"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   News
                 </Link>
               </li>
               <li>
-                <Link to="/global/ireland" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/global/ireland"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   Global Representation
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/careers"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   Careers
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-600 hover:text-[#009C43] transition-colors">
+                <Link
+                  to="/contact"
+                  className="text-gray-600 hover:text-[#009C43] transition-colors"
+                >
                   Contact Us
                 </Link>
               </li>
@@ -153,7 +208,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center border border-gray-300 text-gray-600 hover:border-[#009C43] hover:text-[#009C43] transition-colors"
-                style={{ borderRadius: '8px' }}
+                style={{ borderRadius: "8px" }}
               >
                 <Linkedin size={18} />
               </a>
@@ -162,7 +217,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center border border-gray-300 text-gray-600 hover:border-[#009C43] hover:text-[#009C43] transition-colors"
-                style={{ borderRadius: '8px' }}
+                style={{ borderRadius: "8px" }}
               >
                 <Facebook size={18} />
               </a>
@@ -171,7 +226,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center border border-gray-300 text-gray-600 hover:border-[#009C43] hover:text-[#009C43] transition-colors"
-                style={{ borderRadius: '8px' }}
+                style={{ borderRadius: "8px" }}
               >
                 <Youtube size={18} />
               </a>
@@ -184,10 +239,16 @@ export function Footer() {
 
             {/* Legal Links */}
             <div className="flex gap-6 text-sm">
-              <Link to="/privacy" className="text-gray-600 hover:text-[#009C43] transition-colors">
+              <Link
+                to="/privacy"
+                className="text-gray-600 hover:text-[#009C43] transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-gray-600 hover:text-[#009C43] transition-colors">
+              <Link
+                to="/terms"
+                className="text-gray-600 hover:text-[#009C43] transition-colors"
+              >
                 Terms of Service
               </Link>
             </div>

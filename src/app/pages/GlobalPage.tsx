@@ -2,12 +2,17 @@ import { motion } from "motion/react";
 import { MapPin, Phone, Linkedin, ExternalLink } from "lucide-react";
 import { Link } from "react-router";
 import { Footer } from "../components/Footer";
+import ieFlag from "../../imports/ie.png";
+import ukFlag from "../../imports/uk.png";
+import nordicFlag from "../../imports/nordic.png";
+import frFlag from "../../imports/fr.png";
+import nzFlag from "../../imports/nz.png";
 
 export function GlobalPage() {
   const regions = [
     {
       country: "Ireland",
-      flag: "🇮🇪",
+      flag: ieFlag,
       tagline: "Global HQ & Manufacturing Heart",
       services: ["Manufacturing (EcoPark)", "Global Headquarters", "Sales & Service", "Training Center"],
       address: "Building 1, Revive Eco Park, Cooleeney, Moyne, Thurles, Tipperary, E41 X3P9",
@@ -18,7 +23,7 @@ export function GlobalPage() {
     },
     {
       country: "United Kingdom",
-      flag: "🇬🇧",
+      flag: ukFlag,
       tagline: "Sales, Service & Rental Hub",
       services: ["Sales & Distribution", "Service Hub", "Fleet Rental", "Demonstrations"],
       partners: "Acumec (Sales/Service), Renmak (Rental)",
@@ -29,7 +34,7 @@ export function GlobalPage() {
     },
     {
       country: "Nordic Region",
-      flag: "🇩🇰",
+      flag: nordicFlag,
       tagline: "Denmark Hub - Sustainable Solutions for the North",
       services: ["Sales", "Service & Rental Support", "Winter-Ready Equipment", "Cold Climate Solutions"],
       phone: "+45",
@@ -39,7 +44,7 @@ export function GlobalPage() {
     },
     {
       country: "France",
-      flag: "🇫🇷",
+      flag: frFlag,
       tagline: "L'Excellence de l'Ingénierie",
       services: ["Regional Sales", "Technical Service Support", "Rental Solutions", "Circular Economy Partnership"],
       phone: "+33",
@@ -49,7 +54,7 @@ export function GlobalPage() {
     },
     {
       country: "New Zealand",
-      flag: "🇳🇿",
+      flag: nzFlag,
       tagline: "Irish Strength for Kiwi Industry",
       services: ["Sales & Support", "Parts Distribution", "Remote Monitoring", "Local Expertise"],
       phone: "+64",
@@ -98,7 +103,9 @@ export function GlobalPage() {
               <div className="grid lg:grid-cols-12 gap-8 items-start">
                 {/* Left Column - Identity */}
                 <div className="lg:col-span-3">
-                  <div className="text-6xl mb-4">{region.flag}</div>
+                  <div className="mb-4">
+                    <img src={region.flag} alt={`${region.country} flag`} className="w-20 h-20 object-contain" />
+                  </div>
                   <h3 className="text-3xl font-medium text-gray-900 mb-2">
                     {region.country}
                   </h3>

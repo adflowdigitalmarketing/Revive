@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Factory, Zap, Sun, Wind, Droplet, Leaf, Users, TrendingUp } from "lucide-react";
+import { Factory, Zap, Sun, Wind, Droplet, Leaf, Users, TrendingUp, Recycle, Sprout, Globe, Sparkles, Wrench, ArrowRight } from "lucide-react";
 import { Footer } from "../components/Footer";
 import ecoparkImage from "figma:asset/revive-ecopark-3d.png";
 
@@ -9,8 +9,12 @@ export function EcoParkPage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#009C43] to-[#007A34]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <img
+            src={ecoparkImage}
+            alt="Revive EcoPark"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center py-32">
@@ -22,56 +26,20 @@ export function EcoParkPage() {
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md text-white mb-8 rounded-[12px] text-sm font-medium tracking-widest uppercase border border-white/20">
               The Green Heart of Tipperary
             </div>
-            <h1 className="text-5xl md:text-7xl font-medium text-white mb-8" style={{ letterSpacing: "-0.03em" }}>
+            <h1 className="text-white mb-8" style={{ fontSize: "48px", fontWeight: 600, letterSpacing: "-0.04em", lineHeight: 0.95 }}>
               Revive EcoPark: Where the Future is Born
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-white/90 max-w-4xl mx-auto mb-12" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 400, lineHeight: 1.6 }}>
               The first-of-its-kind industrial hub in Tipperary, Ireland. We have created an ecosystem where innovative manufacturing operates in full harmony with the environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-[#009C43] font-medium text-lg hover:bg-gray-100 transition-colors" style={{ borderRadius: "16px" }}>
                 Book a Visit
               </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
+              <button className="px-8 py-4 bg-white/10 border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
                 Learn About the Decarbonising Zone
               </button>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 3D Map Section */}
-      <section className="py-24 px-6 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ y: 40, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-medium mb-6" style={{ letterSpacing: "-0.03em" }}>
-              Our Facilities
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              A complete ecosystem of sustainable manufacturing
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ scale: 0.95, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-white border border-gray-200 p-8 shadow-xl"
-            style={{ borderRadius: "24px" }}
-          >
-            <img
-              src={ecoparkImage}
-              alt="Revive EcoPark 3D Map"
-              className="w-full h-auto"
-              style={{ borderRadius: "16px" }}
-            />
           </motion.div>
         </div>
       </section>
@@ -158,15 +126,15 @@ export function EcoParkPage() {
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-white/90">
-                    <span className="text-2xl">♻️</span>
+                    <Recycle className="text-white" size={24} />
                     <span>Full Refurbishment Services</span>
                   </div>
                   <div className="flex items-center gap-3 text-white/90">
-                    <span className="text-2xl">🔧</span>
+                    <Wrench className="text-white" size={24} />
                     <span>Advanced Diagnostics</span>
                   </div>
                   <div className="flex items-center gap-3 text-white/90">
-                    <span className="text-2xl">✨</span>
+                    <Sparkles className="text-white" size={24} />
                     <span>Technology Upgrades</span>
                   </div>
                 </div>
@@ -197,44 +165,49 @@ export function EcoParkPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: "🌱",
+                icon: Sprout,
                 title: "Zero Waste Vision",
                 description: "Minimizing production waste through smart material use"
               },
               {
-                icon: "⚡",
+                icon: Zap,
                 title: "Renewable Energy",
                 description: "Solar and wind solutions powering our plants"
               },
               {
-                icon: "💧",
+                icon: Droplet,
                 title: "Water Management",
                 description: "Collecting and recycling technical water for pump testing"
               },
               {
-                icon: "🌍",
+                icon: Globe,
                 title: "Decarbonising Zone",
                 description: "Central element of Mid-Tipperary carbon-neutral zone"
               }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/60 backdrop-blur-md border border-gray-200 p-8 hover:shadow-xl transition-all duration-300"
-                style={{ borderRadius: "24px" }}
-              >
-                <div className="text-5xl mb-6">{item.icon}</div>
-                <h3 className="text-xl font-medium text-gray-900 mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white/60 backdrop-blur-md border border-gray-200 p-8 hover:shadow-xl transition-all duration-300"
+                  style={{ borderRadius: "24px" }}
+                >
+                  <div className="mb-6">
+                    <Icon className="text-[#009C43]" size={48} />
+                  </div>
+                  <h3 className="text-xl font-medium text-gray-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

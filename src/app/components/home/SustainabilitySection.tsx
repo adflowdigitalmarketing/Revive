@@ -12,7 +12,7 @@ const features = [
   {
     icon: Wind,
     label: "Wind Power",
-    description: "Onsite turbine generation",
+    description: "Onsite Wind Infrastructure",
   },
   {
     icon: Leaf,
@@ -78,11 +78,7 @@ export function SustainabilitySection() {
           <p className="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed flex items-center justify-center gap-3">
             Powered 100% by onsite wind and solar energy in
             County Tipperary
-            <img
-              src={co2Logo}
-              alt="CO2 reduction"
-              className="h-8 w-auto inline-block ml-2 opacity-80"
-            />
+           
           </p>
         </motion.div>
 
@@ -108,7 +104,7 @@ export function SustainabilitySection() {
                   100% Renewable Energy
                 </div>
                 <div className="text-gray-600 text-xs font-medium">
-                  Wind & Solar Powered Facility
+                  Solar Powered Facility
                 </div>
               </div>
             </div>

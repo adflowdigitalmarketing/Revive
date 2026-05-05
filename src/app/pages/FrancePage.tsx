@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Award, Recycle, Shield, Linkedin, ExternalLink } from "lucide-react";
+import { Award, Recycle, Shield, Linkedin, ExternalLink, Flag, ShoppingCart, Wrench, Package, Handshake } from "lucide-react";
 import { Link } from "react-router";
 import { Footer } from "../components/Footer";
 
@@ -16,21 +16,20 @@ export function FrancePage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-7xl mb-8">🇫🇷</div>
-            <h1 className="text-5xl md:text-7xl font-medium text-white mb-8" style={{ letterSpacing: "-0.03em" }}>
+            <div className="mb-8 flex justify-center">
+              <Flag className="text-white" size={64} />
+            </div>
+            <h1 className="text-white mb-8" style={{ fontSize: "48px", fontWeight: 600, letterSpacing: "-0.04em", lineHeight: 0.95 }}>
               Revive France
             </h1>
-            <p className="text-2xl md:text-3xl text-white/90 mb-6 max-w-4xl mx-auto">
-              L'Excellence de l'Ingénierie pour vos Projets
-            </p>
-            <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Powerful vacuum solutions and fleet regeneration. Full range of rental, sales, and service services in France.
+            <p className="text-white/90 max-w-3xl mx-auto mb-12" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 400, lineHeight: 1.6 }}>
+              L'Excellence de l'Ingénierie pour vos Projets. Powerful vacuum solutions and fleet regeneration. Full range of rental, sales, and service services in France.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-purple-600 font-medium text-lg hover:bg-gray-100 transition-colors" style={{ borderRadius: "16px" }}>
                 Demander un Devis
               </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
+              <button className="px-8 py-4 bg-white/10 border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
                 Nos Solutions
               </button>
             </div>
@@ -61,19 +60,21 @@ export function FrancePage() {
               {
                 title: "Vente et Location",
                 description: "Supply of the Warrior line and flexible rental terms for short-term and long-term contracts",
-                icon: "🛒"
+                icon: ShoppingCart
               },
               {
                 title: "Maintenance et Support",
                 description: "Local service support to ensure uninterrupted operation (Service après-vente)",
-                icon: "🔧"
+                icon: Wrench
               },
               {
                 title: "Location Directe",
                 description: "Ability to rent equipment for large infrastructure projects in France",
-                icon: "📦"
+                icon: Package
               }
-            ].map((service, index) => (
+            ].map((service, index) => {
+              const Icon = service.icon;
+              return (
               <motion.div
                 key={index}
                 initial={{ y: 30, opacity: 0 }}
@@ -83,7 +84,9 @@ export function FrancePage() {
                 className="bg-white border border-gray-200 p-8 hover:shadow-xl transition-all duration-300"
                 style={{ borderRadius: "24px" }}
               >
-                <div className="text-5xl mb-6">{service.icon}</div>
+                <div className="mb-6 flex justify-center">
+                  <Icon className="text-purple-600" size={48} />
+                </div>
                 <h3 className="text-xl font-medium text-gray-900 mb-3">
                   {service.title}
                 </h3>
@@ -91,7 +94,8 @@ export function FrancePage() {
                   {service.description}
                 </p>
               </motion.div>
-            ))}
+            );
+          })}
           </div>
         </div>
       </section>
@@ -200,7 +204,9 @@ export function FrancePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="text-6xl mb-8">🇫🇷 🤝 🇮🇪</div>
+            <div className="mb-8 flex justify-center">
+              <Handshake className="text-purple-600" size={64} />
+            </div>
             <h2 className="text-4xl md:text-5xl font-medium mb-8" style={{ letterSpacing: "-0.03em" }}>
               Une Nouvelle Force pour l'Industrie Française
             </h2>

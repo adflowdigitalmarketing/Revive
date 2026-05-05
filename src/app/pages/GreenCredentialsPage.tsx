@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Award, TrendingDown, Target, Droplet, Wind, Download, CheckCircle } from "lucide-react";
+import { Award, TrendingDown, Target, Droplet, Wind, Download, CheckCircle, Recycle, Factory, Sprout } from "lucide-react";
 import { Footer } from "../components/Footer";
 
 export function GreenCredentialsPage() {
@@ -58,17 +58,17 @@ export function GreenCredentialsPage() {
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-[20px]">
-                  <div className="text-4xl mb-4">♻️</div>
+                  <div className="mb-4"><Recycle className="text-[#009C43]" size={48} /></div>
                   <h3 className="text-white font-medium mb-2 text-lg">Extended Lifespans</h3>
                   <p className="text-white/80 text-sm">Through reconditioning and regeneration</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-[20px]">
-                  <div className="text-4xl mb-4">🏭</div>
+                  <div className="mb-4"><Factory className="text-gray-600" size={48} /></div>
                   <h3 className="text-white font-medium mb-2 text-lg">Reduced Virgin Steel</h3>
                   <p className="text-white/80 text-sm">Minimizing demand for new materials</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-[20px]">
-                  <div className="text-4xl mb-4">🌱</div>
+                  <div className="mb-4"><Sprout className="text-[#009C43]" size={48} /></div>
                   <h3 className="text-white font-medium mb-2 text-lg">Lower Carbon Footprint</h3>
                   <p className="text-white/80 text-sm">Cutting emissions in manufacturing</p>
                 </div>

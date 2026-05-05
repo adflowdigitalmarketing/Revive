@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Truck, Shield, TrendingUp, MapPin, Phone, Linkedin, ExternalLink } from "lucide-react";
+import { Truck, Shield, TrendingUp, MapPin, Phone, Linkedin, ExternalLink, Flag } from "lucide-react";
 import { Link } from "react-router";
 import { Footer } from "../components/Footer";
 
@@ -16,21 +16,20 @@ export function UKPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-7xl mb-8">🇬🇧</div>
-            <h1 className="text-5xl md:text-7xl font-medium text-white mb-8" style={{ letterSpacing: "-0.03em" }}>
+            <div className="mb-8 flex justify-center">
+              <Flag className="text-white" size={64} />
+            </div>
+            <h1 className="text-white mb-8" style={{ fontSize: "48px", fontWeight: 600, letterSpacing: "-0.04em", lineHeight: 0.95 }}>
               Revive UK
             </h1>
-            <p className="text-2xl md:text-3xl text-white/90 mb-6 max-w-4xl mx-auto">
-              Powerful Solutions for British Infrastructure
-            </p>
-            <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Sales, service support, and rental of premium Revive equipment throughout the United Kingdom. Engineering trusted by professionals.
+            <p className="text-white/90 max-w-3xl mx-auto mb-12" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 400, lineHeight: 1.6 }}>
+              Powerful Solutions for British Infrastructure. Sales, service support, and rental of premium Revive equipment throughout the United Kingdom. Engineering trusted by professionals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-blue-600 font-medium text-lg hover:bg-gray-100 transition-colors" style={{ borderRadius: "16px" }}>
                 View Available Fleet
               </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
+              <button className="px-8 py-4 bg-white/10 border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
                 Order Service in the UK
               </button>
             </div>
@@ -66,8 +65,6 @@ export function UKPage() {
               className="bg-gradient-to-br from-blue-500 to-indigo-600 p-10 relative overflow-hidden group"
               style={{ borderRadius: "24px" }}
             >
-              <div className="absolute bottom-0 right-0 -mr-10 -mb-10 w-48 h-48 bg-white/10 rounded-full blur-2xl" />
-
               <div className="relative z-10">
                 <Truck className="text-white mb-6" size={48} />
                 <h3 className="text-2xl font-medium text-white mb-4">Sales & Distribution</h3>
@@ -94,8 +91,6 @@ export function UKPage() {
               className="bg-gradient-to-br from-emerald-500 to-green-600 p-10 relative overflow-hidden group"
               style={{ borderRadius: "24px" }}
             >
-              <div className="absolute bottom-0 right-0 -mr-10 -mb-10 w-48 h-48 bg-white/10 rounded-full blur-2xl" />
-
               <div className="relative z-10">
                 <TrendingUp className="text-white mb-6" size={48} />
                 <h3 className="text-2xl font-medium text-white mb-4">Specialized Rental Fleet</h3>
@@ -122,8 +117,6 @@ export function UKPage() {
               className="bg-gradient-to-br from-purple-500 to-pink-600 p-10 relative overflow-hidden group"
               style={{ borderRadius: "24px" }}
             >
-              <div className="absolute bottom-0 right-0 -mr-10 -mb-10 w-48 h-48 bg-white/10 rounded-full blur-2xl" />
-
               <div className="relative z-10">
                 <Shield className="text-white mb-6" size={48} />
                 <h3 className="text-2xl font-medium text-white mb-4">UK-Wide Service</h3>
@@ -236,8 +229,6 @@ export function UKPage() {
               className="bg-gradient-to-br from-blue-600 to-indigo-700 p-12 relative overflow-hidden"
               style={{ borderRadius: "24px" }}
             >
-              <div className="absolute bottom-0 right-0 -mr-10 -mb-10 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
-
               <div className="relative z-10">
                 <h3 className="text-3xl font-medium text-white mb-6">
                   Your Productivity — Our Priority in the UK

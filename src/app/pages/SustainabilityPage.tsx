@@ -1,7 +1,8 @@
 import { motion } from "motion/react";
-import { Leaf, Factory, Award, TrendingUp, ArrowRight, Download } from "lucide-react";
+import { Leaf, Factory, Award, TrendingUp, ArrowRight, Download, Wrench, Recycle, Clock } from "lucide-react";
 import { Link } from "react-router";
 import { Footer } from "../components/Footer";
+import decZoneImage from "figma:asset/dec-zone.jpg";
 
 export function SustainabilityPage() {
   const credentials = [
@@ -30,8 +31,15 @@ export function SustainabilityPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/40 to-white" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={decZoneImage}
+            alt="Sustainability"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+        </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center py-32">
           <motion.div
@@ -39,13 +47,13 @@ export function SustainabilityPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block px-4 py-2 bg-[#009C43]/10 text-[#009C43] mb-8 rounded-[12px] text-sm font-medium tracking-widest uppercase border border-[#009C43]/20">
+            <div className="inline-block px-4 py-2 bg-[#009C43]/20 backdrop-blur-md text-[#009C43] mb-8 rounded-[12px] text-sm font-medium tracking-widest uppercase border border-[#009C43]/30">
               The Vision
             </div>
-            <h1 className="text-5xl md:text-7xl font-medium text-gray-900 mb-8" style={{ letterSpacing: "-0.03em" }}>
+            <h1 className="text-white mb-8" style={{ fontSize: "48px", fontWeight: 600, letterSpacing: "-0.04em", lineHeight: 0.95 }}>
               Engineering a Greener Future for Underground Infrastructure
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-white/90 max-w-4xl mx-auto mb-12" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 400, lineHeight: 1.6 }}>
               From Ireland's first off-grid manufacturing hub to global circular economy leadership. We don't just build machines; we engineer lifecycles.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -86,7 +94,7 @@ export function SustainabilityPage() {
                   100% Off-Grid Manufacturing
                 </h2>
                 <p className="text-white/90 text-lg mb-6 leading-relaxed">
-                  Featuring 200kW Solar and 150kW Wind energy systems. Located at the historic Lisheen Mine site.
+                  Featuring 200kW Solar array and advanced Wind energy infrastructure. Located at the historic Lisheen Mine site.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mt-8">
                   <div className="bg-white/10 backdrop-blur-md p-4 rounded-[16px] border border-white/20">
@@ -94,8 +102,8 @@ export function SustainabilityPage() {
                     <div className="text-white/80 text-sm">Solar Power</div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-md p-4 rounded-[16px] border border-white/20">
-                    <div className="text-3xl font-medium text-white mb-1">150kW</div>
-                    <div className="text-white/80 text-sm">Wind Energy</div>
+                    <div className="text-3xl font-medium text-white mb-1">100%</div>
+                    <div className="text-white/80 text-sm">Wind Infrastructure</div>
                   </div>
                 </div>
                 <Link to="/sustainability/ecopark">
@@ -208,7 +216,7 @@ export function SustainabilityPage() {
               className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 p-10 text-center"
               style={{ borderRadius: "24px" }}
             >
-              <div className="text-6xl mb-6">🔧</div>
+              <div className="mb-6"><Wrench className="text-white" size={48} /></div>
               <h3 className="text-2xl font-medium text-gray-900 mb-4">8mm Steel Tanks</h3>
               <p className="text-gray-600 leading-relaxed">
                 Engineered to outlast the chassis for decades of service
@@ -223,7 +231,7 @@ export function SustainabilityPage() {
               className="bg-gradient-to-br from-emerald-50 to-white border border-emerald-100 p-10 text-center"
               style={{ borderRadius: "24px" }}
             >
-              <div className="text-6xl mb-6">♻️</div>
+              <div className="mb-6"><Recycle className="text-white" size={48} /></div>
               <h3 className="text-2xl font-medium text-gray-900 mb-4">Revive Program</h3>
               <p className="text-gray-600 leading-relaxed">
                 Remounting backend units for 2nd, 3rd, and 4th lifecycles
@@ -238,7 +246,7 @@ export function SustainabilityPage() {
               className="bg-gradient-to-br from-amber-50 to-white border border-amber-100 p-10 text-center"
               style={{ borderRadius: "24px" }}
             >
-              <div className="text-6xl mb-6">⏱️</div>
+              <div className="mb-6"><Clock className="text-white" size={48} /></div>
               <h3 className="text-2xl font-medium text-gray-900 mb-4">30+ Years</h3>
               <p className="text-gray-600 leading-relaxed">
                 Operational value through continuous regeneration

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Globe, Shield, Wifi, Package, Linkedin, ExternalLink } from "lucide-react";
+import { Globe, Shield, Wifi, Package, Linkedin, ExternalLink, Flag, Leaf } from "lucide-react";
 import { Link } from "react-router";
 import { Footer } from "../components/Footer";
 
@@ -16,21 +16,20 @@ export function NewZealandPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-7xl mb-8">🇳🇿</div>
-            <h1 className="text-5xl md:text-7xl font-medium text-white mb-8" style={{ letterSpacing: "-0.03em" }}>
+            <div className="mb-8 flex justify-center">
+              <Flag className="text-white" size={64} />
+            </div>
+            <h1 className="text-white mb-8" style={{ fontSize: "48px", fontWeight: 600, letterSpacing: "-0.04em", lineHeight: 0.95 }}>
               Revive New Zealand
             </h1>
-            <p className="text-2xl md:text-3xl text-white/90 mb-6 max-w-4xl mx-auto">
-              Irish Strength for Kiwi Industry
-            </p>
-            <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Premium vacuum solutions built for the harshest conditions. Direct access to Revive Warrior and Program technologies on the other side of the world.
+            <p className="text-white/90 max-w-3xl mx-auto mb-12" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 400, lineHeight: 1.6 }}>
+              Irish Strength for Kiwi Industry. Premium vacuum solutions built for the harshest conditions. Direct access to Revive Warrior and Program technologies on the other side of the world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-amber-600 font-medium text-lg hover:bg-gray-100 transition-colors" style={{ borderRadius: "16px" }}>
                 Request NZ Consultation
               </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
+              <button className="px-8 py-4 bg-white/10 border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
                 Technical Support
               </button>
             </div>
@@ -128,8 +127,6 @@ export function NewZealandPage() {
               className="bg-gradient-to-br from-amber-500 to-orange-600 p-10 relative overflow-hidden"
               style={{ borderRadius: "24px" }}
             >
-              <div className="absolute bottom-0 right-0 -mr-10 -mb-10 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
-
               <div className="relative z-10">
                 <h3 className="text-3xl font-medium text-white mb-6">
                   Heavy-Duty Engineering
@@ -158,8 +155,6 @@ export function NewZealandPage() {
               className="bg-gradient-to-br from-blue-600 to-indigo-700 p-10 relative overflow-hidden"
               style={{ borderRadius: "24px" }}
             >
-              <div className="absolute bottom-0 right-0 -mr-10 -mb-10 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
-
               <div className="relative z-10">
                 <Wifi className="text-white mb-6" size={48} />
                 <h3 className="text-3xl font-medium text-white mb-4">
@@ -187,7 +182,9 @@ export function NewZealandPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="text-6xl mb-6">🌿</div>
+              <div className="mb-6">
+                <Leaf className="text-[#009C43]" size={64} />
+              </div>
               <h2 className="text-4xl md:text-5xl font-medium mb-6" style={{ letterSpacing: "-0.03em" }}>
                 Keeping NZ Green
               </h2>
@@ -214,8 +211,6 @@ export function NewZealandPage() {
               className="bg-gradient-to-br from-amber-600 to-orange-700 p-12 relative overflow-hidden"
               style={{ borderRadius: "24px" }}
             >
-              <div className="absolute bottom-0 left-0 -ml-10 -mb-10 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
-
               <div className="relative z-10">
                 <h3 className="text-3xl font-medium text-white mb-6">
                   A Bridge Between Two Islands of Innovation

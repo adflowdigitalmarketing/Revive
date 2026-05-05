@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Factory, Award, Users, MapPin, Phone, TrendingUp } from "lucide-react";
+import { Factory, Award, Users, MapPin, Phone, TrendingUp, Flag, Truck, Wrench, GraduationCap, Package } from "lucide-react";
 import { Link } from "react-router";
 import { Footer } from "../components/Footer";
 
@@ -16,21 +16,20 @@ export function IrelandPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-7xl mb-8">🇮🇪</div>
-            <h1 className="text-5xl md:text-7xl font-medium text-white mb-8" style={{ letterSpacing: "-0.03em" }}>
+            <div className="mb-8 flex justify-center">
+              <Flag className="text-white" size={64} />
+            </div>
+            <h1 className="text-white mb-8" style={{ fontSize: "48px", fontWeight: 600, letterSpacing: "-0.04em", lineHeight: 0.95 }}>
               Revive Ireland
             </h1>
-            <p className="text-2xl md:text-3xl text-white/90 mb-6 max-w-4xl mx-auto">
-              Center of Innovation and Manufacturing
-            </p>
-            <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Revive Group Headquarters. Where Warrior technologies are born and the future of circular economy is realized.
+            <p className="text-white/90 max-w-3xl mx-auto mb-12" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)", fontWeight: 400, lineHeight: 1.6 }}>
+              Center of Innovation and Manufacturing. Revive Group Headquarters. Where Warrior technologies are born and the future of circular economy is realized.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-[#009C43] font-medium text-lg hover:bg-gray-100 transition-colors" style={{ borderRadius: "16px" }}>
                 Contact HQ
               </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
+              <button className="px-8 py-4 bg-white/10 border-2 border-white text-white font-medium text-lg hover:bg-white/20 transition-colors" style={{ borderRadius: "16px" }}>
                 Book Factory Visit
               </button>
             </div>
@@ -66,12 +65,10 @@ export function IrelandPage() {
               className="bg-gradient-to-br from-blue-500 to-indigo-600 p-10 relative overflow-hidden group"
               style={{ borderRadius: "24px" }}
             >
-              <div className="absolute top-0 right-0 -mr-10 -mt-10 w-48 h-48 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-
               <div className="relative z-10">
                 <Factory className="text-white mb-6" size={48} />
                 <h3 className="text-3xl font-medium text-white mb-4">Building One</h3>
-                <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-[8px] text-white text-sm font-medium uppercase tracking-wide mb-6 border border-white/20">
+                <div className="inline-block px-3 py-1 bg-white/20 rounded-[8px] text-white text-sm font-medium uppercase tracking-wide mb-6 border border-white/20">
                   Off-Grid Manufacturer
                 </div>
                 <p className="text-white/90 leading-relaxed mb-6">
@@ -102,12 +99,10 @@ export function IrelandPage() {
               className="bg-gradient-to-br from-[#009C43] to-[#007A34] p-10 relative overflow-hidden group"
               style={{ borderRadius: "24px" }}
             >
-              <div className="absolute top-0 right-0 -mr-10 -mt-10 w-48 h-48 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-
               <div className="relative z-10">
                 <Award className="text-white mb-6" size={48} />
                 <h3 className="text-3xl font-medium text-white mb-4">Turnpike Plant</h3>
-                <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-[8px] text-white text-sm font-medium uppercase tracking-wide mb-6 border border-white/20">
+                <div className="inline-block px-3 py-1 bg-white/20 rounded-[8px] text-white text-sm font-medium uppercase tracking-wide mb-6 border border-white/20">
                   Regeneration Center
                 </div>
                 <p className="text-white/90 leading-relaxed mb-6">
@@ -153,44 +148,49 @@ export function IrelandPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: "🚛",
+                icon: Truck,
                 title: "Sales",
                 description: "New Warrior equipment direct from factory"
               },
               {
-                icon: "🔧",
+                icon: Wrench,
                 title: "Service & Maintenance",
                 description: "Technical service at factory base"
               },
               {
-                icon: "🎓",
+                icon: GraduationCap,
                 title: "Training Center",
                 description: "Operator training on advanced systems"
               },
               {
-                icon: "📦",
+                icon: Package,
                 title: "Parts & Support",
                 description: "Immediate access to genuine parts"
               }
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 p-8 text-center hover:shadow-xl transition-all duration-300"
-                style={{ borderRadius: "24px" }}
-              >
-                <div className="text-5xl mb-6">{service.icon}</div>
-                <h3 className="text-xl font-medium text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </motion.div>
-            ))}
+            ].map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 p-8 text-center hover:shadow-xl transition-all duration-300"
+                  style={{ borderRadius: "24px" }}
+                >
+                  <div className="mb-6 flex justify-center">
+                    <Icon className="text-[#009C43]" size={48} />
+                  </div>
+                  <h3 className="text-xl font-medium text-gray-900 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -238,8 +238,6 @@ export function IrelandPage() {
               className="bg-gradient-to-br from-gray-900 to-gray-700 p-12 relative overflow-hidden"
               style={{ borderRadius: "24px" }}
             >
-              <div className="absolute bottom-0 left-0 -ml-10 -mb-10 w-48 h-48 bg-[#009C43]/20 rounded-full blur-3xl" />
-
               <div className="relative z-10">
                 <h3 className="text-3xl font-medium text-white mb-6">
                   Irish Engineering — Global Standard

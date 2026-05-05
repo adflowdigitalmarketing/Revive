@@ -14,7 +14,7 @@ const partners = [
 
 export function PartnersSection() {
   return (
-    <section className="bg-white py-20 px-6">
+    <section className="bg-white py-20 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
@@ -28,24 +28,39 @@ export function PartnersSection() {
           </h2>
         </motion.div>
 
-        <div className="overflow-x-auto">
-          <div className="flex gap-12 justify-center items-center min-w-max px-4">
-            {partners.map((partner, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex-shrink-0"
-              >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
-                />
-              </motion.div>
-            ))}
+        <div className="relative">
+          {/* Left Fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+
+          {/* Right Fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-20 items-center"
+              animate={{
+                x: [0, -1000]
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 30,
+                  ease: "linear"
+                }
+              }}
+              style={{ width: "max-content" }}
+            >
+              {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
+                <div key={index} className="flex-shrink-0">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-24 w-auto object-contain grayscale opacity-50 hover:opacity-80 hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>

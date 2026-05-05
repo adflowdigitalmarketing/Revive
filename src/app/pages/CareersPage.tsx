@@ -2,6 +2,8 @@ import { motion } from "motion/react";
 import { Users, TrendingUp, Globe, Lightbulb, Target, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import { Footer } from "../components/Footer";
+import findJobImage from "../../imports/find-job-1.jpg";
+import apprenticeshipsImage from "../../imports/Apprenticeships-1.jpg";
 
 export function CareersPage() {
   const stats = [
@@ -155,23 +157,30 @@ export function CareersPage() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="group relative bg-gradient-to-br from-gray-900 to-gray-700 p-12 min-h-[400px] flex flex-col justify-between overflow-hidden cursor-pointer"
+                className="group relative min-h-[500px] flex flex-col justify-end overflow-hidden cursor-pointer"
                 style={{ borderRadius: "24px" }}
               >
-                <div className="absolute inset-0 bg-[#009C43]/0 group-hover:bg-[#009C43]/10 transition-colors duration-500" />
-
-                <div className="relative z-10">
-                  <Users className="text-white/80 mb-6" size={48} />
-                  <h3 className="text-3xl md:text-4xl font-semibold text-white mb-4">
-                    Experienced Professionals
-                  </h3>
-                  <p className="text-white/80 text-lg leading-relaxed">
-                    Are you already a master of your craft? We are looking for engineers, mechanics and managers ready for large-scale challenges.
-                  </p>
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                  <img
+                    src={findJobImage}
+                    alt="Experienced Professionals"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 </div>
 
-                <div className="relative z-10 flex items-center gap-3 text-[#009C43] font-semibold group-hover:gap-5 transition-all duration-300">
-                  View Vacancies <ArrowRight size={20} />
+                {/* Content */}
+                <div className="relative z-10 p-10">
+                  <h3 className="text-3xl md:text-4xl font-semibold text-white mb-4">
+                    Досвідчені професіонали
+                  </h3>
+                  <p className="text-white/90 text-lg leading-relaxed mb-6">
+                    Are you already a master of your craft? We are looking for engineers, mechanics and managers ready for large-scale challenges.
+                  </p>
+                  <div className="flex items-center gap-3 text-[#009C43] font-semibold group-hover:gap-5 transition-all duration-300">
+                    View Vacancies <ArrowRight size={20} />
+                  </div>
                 </div>
               </motion.div>
             </Link>
@@ -184,23 +193,30 @@ export function CareersPage() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="group relative bg-gradient-to-br from-[#009C43] to-[#007A34] p-12 min-h-[400px] flex flex-col justify-between overflow-hidden cursor-pointer"
+                className="group relative min-h-[500px] flex flex-col justify-end overflow-hidden cursor-pointer"
                 style={{ borderRadius: "24px" }}
               >
-                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-500" />
-
-                <div className="relative z-10">
-                  <TrendingUp className="text-white/90 mb-6" size={48} />
-                  <h3 className="text-3xl md:text-4xl font-semibold text-white mb-4">
-                    Apprenticeships
-                  </h3>
-                  <p className="text-white/90 text-lg leading-relaxed">
-                    Are you a young talent who wants to learn how to build the world's best trucks? Our program is a ticket into the profession.
-                  </p>
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                  <img
+                    src={apprenticeshipsImage}
+                    alt="Apprenticeships"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 </div>
 
-                <div className="relative z-10 flex items-center gap-3 text-white font-semibold group-hover:gap-5 transition-all duration-300">
-                  Learn About Training <ArrowRight size={20} />
+                {/* Content */}
+                <div className="relative z-10 p-10">
+                  <h3 className="text-3xl md:text-4xl font-semibold text-white mb-4">
+                    Практиканти
+                  </h3>
+                  <p className="text-white/90 text-lg leading-relaxed mb-6">
+                    Are you a young talent who wants to learn how to build the world's best trucks? Our program is a ticket into the profession.
+                  </p>
+                  <div className="flex items-center gap-3 text-[#009C43] font-semibold group-hover:gap-5 transition-all duration-300">
+                    Learn About Training <ArrowRight size={20} />
+                  </div>
                 </div>
               </motion.div>
             </Link>

@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
-import { ChevronDown, Globe } from "lucide-react";
+import { ChevronDown, Globe, Search, Menu } from "lucide-react";
+import { MobileMenu } from "./MobileMenu";
 import logo from "../../imports/Revive_Group_gray_logo.png";
 
 interface SubMenuItem {
@@ -80,6 +81,7 @@ export function Navigation() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [currentLang, setCurrentLang] = useState("EN");
   const [showLangMenu, setShowLangMenu] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const languages = ["EN", "DA", "FR", "DE", "ES"];
 
   return (
@@ -166,16 +168,16 @@ export function Navigation() {
           ))}
         </div>
 
-        {/* Language Selector & Contact Button */}
+        {/* Desktop: Language Selector & Contact Button | Mobile: Search & Menu */}
         <div className="flex items-center gap-3">
-          {/* Language Selector */}
+          {/* Language Selector - Desktop Only */}
           <div
-            className="relative"
+            className="relative hidden xl:block"
             onMouseEnter={() => setShowLangMenu(true)}
             onMouseLeave={() => setShowLangMenu(false)}
           >
             <button
-              className="hidden md:flex items-center gap-2 bg-white/40 backdrop-blur-sm border border-gray-300 text-gray-700 px-4 py-2.5 hover:bg-white/60 transition-all"
+              className="flex items-center gap-2 bg-white/40 backdrop-blur-sm border border-gray-300 text-gray-700 px-4 py-2.5 hover:bg-white/60 transition-all"
               style={{ borderRadius: '16px', fontWeight: 600, fontSize: '0.875rem' }}
             >
               <Globe size={18} />
@@ -211,14 +213,35 @@ export function Navigation() {
             </AnimatePresence>
           </div>
 
+          {/* Contact Button - Desktop Only */}
           <button
-            className="bg-[#009C43] text-white px-6 py-2.5 hover:bg-[#007A34] transition-colors flex-shrink-0"
+            className="hidden xl:block bg-[#009C43] text-white px-6 py-2.5 hover:bg-[#007A34] transition-colors flex-shrink-0"
             style={{ borderRadius: '16px', fontWeight: 600, fontSize: '0.875rem' }}
           >
             CONTACT US
           </button>
+
+          {/* Mobile: Search Icon */}
+          <button
+            className="xl:hidden p-2 hover:bg-white/60 rounded-full transition-colors"
+            aria-label="Search"
+          >
+            <Search size={22} className="text-gray-700" />
+          </button>
+
+          {/* Mobile: Menu Icon */}
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="xl:hidden p-2 hover:bg-white/60 rounded-full transition-colors"
+            aria-label="Menu"
+          >
+            <Menu size={22} className="text-gray-700" />
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
     </motion.nav>
   );
 }
